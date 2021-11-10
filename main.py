@@ -40,16 +40,11 @@ def display_complete():
         # Display past courses and total courses completed
 
         print("{:>10}  {:>10}  {:>10} {:>10}  {:>10}".format("Year", "Semester", "Course Code", "Grade", "Credits"))
-        for record in cursor.fetchall():
-            print("{:>10} {:>10} {:>10} {:>10} {:>10}".format(record[0], record[1], record[2], record[3], record[4]))
 
-        print("Classes taken: ", cursor.fetchall()[-1][-1])
 def display_planned():
         # Display planned courses and total courses planned
 
         print("{:>10}  {:>10}  {:>10} {:>10} {:>10}".format("Year", "Semester", "Course Code", "Grade", "Credits"))
-        for record in cursor.fetchall():
-            print("{:>10}  {:>10}  {:>10} {:>10}  {:>10}".format(record[0], record[1], record[2], record[3], record[4]))
 
 
 def update_complete():
@@ -142,6 +137,3 @@ def main():
 if __name__ == "__main__":
     main()
 
-# useful  
-# data = result.to_dict()
-# result = db.collection("courses").document(name).get()
