@@ -7,10 +7,6 @@ def initialize_firestore():
     """
     Create database connection
     """
-
-    # Setup Google Cloud Key - The json file is obtained by going to 
-    # Project Settings, Service Accounts, Create Service Account, and then
-    # Generate New Private Key
     os.environ["GOOGLE_APPLICATION_CREDENTIALS"]  = "courses-83e54-firebase-adminsdk-k5fn4-59e0612f71.json"
 
     # Use the application default credentials.  The projectID is obtianed 
@@ -25,7 +21,6 @@ def initialize_firestore():
     return db
 
 def get_course_code(db):
-
     if len(results) == 0:
         print("No courses in database")
         return None
@@ -38,14 +33,10 @@ def get_course_code(db):
 
 def display_complete():
         # Display past courses and total courses completed
-
-        print("{:>10}  {:>10}  {:>10} {:>10}  {:>10}".format("Year", "Semester", "Course Code", "Grade", "Credits"))
-
+        pass
 def display_planned():
         # Display planned courses and total courses planned
-
-        print("{:>10}  {:>10}  {:>10} {:>10} {:>10}".format("Year", "Semester", "Course Code", "Grade", "Credits"))
-
+        pass
 
 def update_complete():
         # Update past courses
@@ -101,6 +92,8 @@ def remove_course():
 
     # Save this in the log collection in Firestore
     log_change(db, f"Removed {course_code} from planned")
+
+    
 def total_credits():
         # Display total credits taken and total credits planned
         pass
